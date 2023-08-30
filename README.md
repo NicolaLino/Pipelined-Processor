@@ -11,15 +11,15 @@ this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written i
 - [x] Extend byte to 32 with signal ExtByte `sign` or `zero` `unsigned`
 - [x] shift left 2
 - [x] 1 bit register for signals
+- [x] comparator
+- [ ] 32-bit MUX 2:1
+- [ ] 32-bit MUX 4:1
+- [ ] 32-bit MUX 8:1
 - [ ] Control Unit
 - [ ] Data Memory
 - [ ] Hazard Detection Unit
 - [ ] Forwarding Unit
 - [ ] PC Control Unit
-- [ ] comparator
-- [ ] 32-bit MUX 2:1
-- [ ] 32-bit MUX 4:1
-- [ ] 32-bit MUX 8:1
 
 # After finishing the components we will implement the stages
 - [ ] connect the components together in fetch stage
