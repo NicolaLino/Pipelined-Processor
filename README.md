@@ -1,6 +1,6 @@
 # Pipelined-Processor
 this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written in system verilog
-# ToDo
+# Components needed to be implemented
 - [x] instruction memory
 - [x] Arithmetic Logic Unit
 - [ ] Register File
@@ -21,4 +21,16 @@ this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written i
 - [ ] shift left 2
 - [ ] 32-bit Register File 
 - [ ] 1 bit register for signals
-- [ ] 
+
+# After finishing the components we will implement the stages
+- [ ] connect the components together in fetch stage
+- [ ] connect the components together in decode stage
+- [ ] connect the components together in execute stage
+- [ ] connect the components together in memory stage
+- [ ] connect the components together in write back stage
+
+
+# After finishing the stages we will implement the processor
+- [ ] connect the stages together
+
+
