@@ -15,8 +15,8 @@ this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written i
 - [x] 32-bit MUX 2:1
 - [x] 32-bit MUX 4:1
 - [x] 32-bit MUX 8:1
-- [ ] Data Memory
-- [ ] Control Unit
+- [x] Control Unit
+- [x] Data Memory
 - [ ] PC Control Unit
 - [ ] Hazard Detection Unit
 - [ ] Forwarding Unit

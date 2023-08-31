@@ -37,9 +37,9 @@ module DataMemory(data, address, dataIn, memWrite, memRead);
     // Write to memory
     always @(address or dataIn) begin
         case (memWrite)
-            2'b01: mem[address] <= dataIn;      // Store full word
-            2'b10: mem[address][15:0] <= dataIn; // Store half word
-            2'b11: mem[address][7:0] <= dataIn;  // Store byte
+            2'b01: mem[address] = dataIn;      // Store full word
+            2'b10: mem[address][15:0] = dataIn; // Store half word
+            2'b11: mem[address][7:0] = dataIn;  // Store byte
             default: dataIn = dataIn;     // Store full word by default
         endcase
     end
