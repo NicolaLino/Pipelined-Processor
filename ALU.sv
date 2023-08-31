@@ -16,7 +16,7 @@
 */
 
 
-module ALU(aluOuput, carryOut, zero, overflow, negative, BussA, BussB, opcode);
+module ALU(aluOuput, carryOut, zero, overflow, negative, BussA, BussB, SIG_Opcode);
 	
     // alu ouputs
 	output overflow, negative, zero, carryOut;
@@ -25,7 +25,7 @@ module ALU(aluOuput, carryOut, zero, overflow, negative, BussA, BussB, opcode);
 	// alu inputs
 	input signed [31:0] BussA;
 	input signed [31:0] BussB;
-	input [4:0] opcode;
+	input [4:0] SIG_Opcode;
 
 	// registers declarations
 	reg signed [31:0] BussBComp;
@@ -33,7 +33,7 @@ module ALU(aluOuput, carryOut, zero, overflow, negative, BussA, BussB, opcode);
 	reg overflow, negative, zero, carryOut;
 	
 	
-	// Opcodes of ALU
+	// SIG_Opcodes of ALU
 	parameter 	
 				NOOP = 5'b00000,
 				ADD  = 5'b00001,
@@ -66,8 +66,8 @@ module ALU(aluOuput, carryOut, zero, overflow, negative, BussA, BussB, opcode);
 				//CALL = 5'b11001,
 				//RET = 5'b11010,
 				
-	always @(BussA, BussB, opcode) begin
-		case (opcode)
+	always @(BussA, BussB, SIG_Opcode) begin
+		case (SIG_Opcode)
 				// R-type instrucitons
 			ADD: begin
 				aluOuput = BussA + BussB;

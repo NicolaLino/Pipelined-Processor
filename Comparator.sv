@@ -2,11 +2,11 @@
 
 
 module Comparator(
-    output wire isEqual,
+    output wire SIG_EQ,
     input wire [31:0] valueA,
     input wire [31:0] valueB,
 );
-    assign isEqual = (valueA == valueB) ? 1'b1 : 1'b0;
+    assign SIG_EQ = (valueA == valueB) ? 1'b1 : 1'b0;
 endmodule
 
 

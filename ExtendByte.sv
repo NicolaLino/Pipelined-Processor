@@ -4,7 +4,7 @@
 module ExtendByte(
     output wire [31:0] extendedValue,
     input wire [7:0] byte,
-    input wire ExtByte, // 1 for sign extension, 0 for zero extension
+    input wire SIG_ExtByte, // 1 for sign extension, 0 for zero extension
 );
     wire [31:0] signExtended;
     wire [31:0] zeroExtended;
@@ -12,6 +12,6 @@ module ExtendByte(
     assign signExtended = {{24{byte[7]}}, byte};
     assign zeroExtended = {24'b0, byte};
 
-    assign extendedValue = ExtByte ? signExtended : zeroExtended;
+    assign extendedValue = SIG_ExtByte ? signExtended : zeroExtended;
 endmodule
 
