@@ -6,7 +6,7 @@
     Creation Date:  8/27/2023
     Contributors: 
     Last Modified Date: 8/29/2023
-    Version: 1.1 
+    Version: 1.1
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
     All Rights Reserved Worldwide.
@@ -24,7 +24,7 @@ module InstructionMemory(
 
     
     always @(address) begin
-        instruction <= instrmem[address >> 2];
+        instruction = instrmem[address >> 2];
     end
 
 endmodule

@@ -1,13 +1,13 @@
 `timescale 1 ps / 100 fs
 
 /*
-    File Name: RegisterFile.sv
-    Description: register file module 
-    Created by (Author Name): dana
-    Creation Date:  8/30/2023
-    Contributors: Nicola
-    Last Modified Date: 8/30/2023
-    Version: 0.5
+    File Name: RegisterFile.v
+    Description: Register file module for istruction decode stage
+    Created by (Author Name): 
+    Creation Date:  8/31/2023
+    Contributors: 
+    Last Modified Date: 8/31/2023
+    Version: 1.0
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
     All Rights Reserved Worldwide.
