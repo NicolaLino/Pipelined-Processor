@@ -1,5 +1,5 @@
 # Pipelined-Processor
-this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written in system verilog
+this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written in System Verilog
 # Components needed to be implemented
 - [x] instruction memory
 - [x] Arithmetic Logic Unit
@@ -12,14 +12,14 @@ this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written i
 - [x] shift left 2
 - [x] 1 bit register for signals
 - [x] comparator
-- [ ] 32-bit MUX 2:1
-- [ ] 32-bit MUX 4:1
-- [ ] 32-bit MUX 8:1
-- [ ] Control Unit
+- [x] 32-bit MUX 2:1
+- [x] 32-bit MUX 4:1
+- [x] 32-bit MUX 8:1
 - [ ] Data Memory
+- [ ] Control Unit
+- [ ] PC Control Unit
 - [ ] Hazard Detection Unit
 - [ ] Forwarding Unit
-- [ ] PC Control Unit
 
 # After finishing the components we will implement the stages
 - [ ] connect the components together in fetch stage
