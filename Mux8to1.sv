@@ -16,7 +16,7 @@
 */
 
 module Mux8to1(
-    output wire [31:0] output,
+    output wire [31:0] result,
     input wire [31:0] data0,
     input wire [31:0] data1,
     input wire [31:0] data2,
@@ -25,9 +25,9 @@ module Mux8to1(
     input wire [31:0] data5,
     input wire [31:0] data6,
     input wire [31:0] data7,
-    input wire [2:0] select,
+    input wire [2:0] select
 );
-    assign output = (select == 3'b000) ? data0 :
+    assign result = (select == 3'b000) ? data0 :
                     (select == 3'b001) ? data1 :
                     (select == 3'b010) ? data2 :
                     (select == 3'b011) ? data3 :

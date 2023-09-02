@@ -17,10 +17,10 @@
 */
 
 module Mux2to1(
-    output wire [31:0] output,
+    output wire [31:0] result,
     input wire [31:0] data0,
     input wire [31:0] data1,
-    input wire select,
+    input wire select
 );
-    assign output = select ? data1 : data0;
+    assign result = select ? data1 : data0;
 endmodule
