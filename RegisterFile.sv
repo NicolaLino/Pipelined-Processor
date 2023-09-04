@@ -49,6 +49,7 @@ module RegisterFile(
 		end
 	end
 
+	//Write data to register
 	always @(posedge RegWrite) begin
 		RegArray[WriteRegister] <= WriteData; //Write data to register
 	end
