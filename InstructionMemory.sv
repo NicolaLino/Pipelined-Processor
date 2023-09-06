@@ -20,12 +20,13 @@ module InstructionMemory(
     input [31:0] address
 );
 
-    reg [31:0] instruction;
+    reg [31:0] internal_instruction;
     reg [31:0] instrmem [1023:0];
 
-    
     always @(address) begin
-        instruction = instrmem[address >> 2];
+        internal_instruction = instrmem[address >> 2];
     end
+
+    assign instruction = internal_instruction;
 
 endmodule

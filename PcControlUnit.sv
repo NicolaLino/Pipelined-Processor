@@ -18,15 +18,15 @@
 
 
 module PcControlUnit(
-    output [2:0] PcSource;
-    output SIG_Kill;
-    input SIG_Jump;
-    input SIG_Ret;
-    input SIG_Bne;
-    input SIG_Beq;
-    input SIG_CallRs1;
-    input SIG_Call;
-    input SIG_Eq;
+    output [2:0] PcSourceOut,
+    output SIG_KillOut,
+    input SIG_Jump,
+    input SIG_Ret,
+    input SIG_Bne,
+    input SIG_Beq,
+    input SIG_CallRs1,
+    input SIG_Call,
+    input SIG_Eq
 );
 
     reg [2:0] PcSource;
@@ -62,5 +62,9 @@ module PcControlUnit(
             SIG_Kill = 1'b0;
         end
     end
+
+    // Assign module outputs to internal signals
+    assign PcSourceOut = PcSource;
+    assign SIG_KillOut = SIG_Kill;
 
 endmodule
