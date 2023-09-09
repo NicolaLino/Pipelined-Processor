@@ -18,7 +18,8 @@
 
 
 module DataMemory(data, address, dataIn, memWrite, memRead);
-    input [31:0] address, dataIn;
+    input reg [31:0] address;
+    input reg [31:0] dataIn;
     input [1:0] memWrite;
     input memRead;
     output [31:0] data;
@@ -40,7 +41,6 @@ module DataMemory(data, address, dataIn, memWrite, memRead);
             2'b01: mem[address] = dataIn;      // Store full word
             2'b10: mem[address][15:0] = dataIn; // Store half word
             2'b11: mem[address][7:0] = dataIn;  // Store byte
-            default: dataIn = dataIn;     // Store full word by default
         endcase
     end
 endmodule
