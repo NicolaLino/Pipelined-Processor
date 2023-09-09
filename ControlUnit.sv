@@ -1,3 +1,4 @@
+`timescale 1 ps / 100 fs 
 
 
 /*
@@ -17,25 +18,25 @@
 */
 
 module ControlUnit (
-    output wire  SIG_RaDst,
-    output wire  SIG_RbDst,
-    output wire  SIG_ALUSrc,
-    output wire  SIG_WBdata,
-    output wire  SIG_RegWrite,
-    output wire  SIG_MemRead,
-    output wire  [1:0] SIG_MemWrite,
-    output wire  SIG_BEQ,
-    output wire  SIG_BNE,
-    output wire  SIG_Jump,
-    output wire  SIG_CALL_RS1,
-    output wire  [1:0] SIG_LoadType,
-    output wire  SIG_ExtOp,
-    output wire  [4:0] SIG_Function,
-    output wire  SIG_ExtHalf,
-    output wire  SIG_ExtByte,
-    output wire  SIG_Call,
-    output wire  SIG_RET,
-    input wire [4:0] SIG_Opcode
+    output reg  SIG_RaDst,
+    output reg  SIG_RbDst,
+    output reg  SIG_ALUSrc,
+    output reg  SIG_WBdata,
+    output reg  SIG_RegWrite,
+    output reg  SIG_MemRead,
+    output reg  [1:0] SIG_MemWrite,
+    output reg  SIG_BEQ,
+    output reg  SIG_BNE,
+    output reg  SIG_Jump,
+    output reg  SIG_CALL_RS1,
+    output reg  [1:0] SIG_LoadType,
+    output reg  SIG_ExtOp,
+    output reg  [4:0] SIG_Function,
+    output reg  SIG_ExtHalf,
+    output reg  SIG_ExtByte,
+    output reg  SIG_Call,
+    output reg  SIG_RET,
+    input [4:0] SIG_Opcode
 );
 
 parameter 
