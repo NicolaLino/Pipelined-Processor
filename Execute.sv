@@ -5,8 +5,8 @@
     Description: Execute stage of the pipeline
     Created by (Author Name):  Nicola Abu Shaibeh
     Creation Date:  09/06/2023
-    Contributors: 
-    Last Modified Date: 8/31/2023
+    Contributors:  Fayez
+    Last Modified Date: 
     Version: 1.0
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
@@ -18,18 +18,20 @@
 
 
 module Execute(
-        output [31:0] dataInMemory,
-        output [31:0] ALU_Result,
+        output [31:0] dataInMemory, // Data to be written in memory
+        output [31:0] ALU_Result, // Result of the ALU operation will as an address for the memory 
+        // Flags from the ALU
         output zeroFlag,
         output carryOutFlag,
         output overflowFlag,
         output negativeFlag,
-        input immediate,
-        input [31:0] registerAData,
-        input [31:0] registerBData,
-        input [31:0] forwardWriteBackData,
-        input [4:0] SIG_Function,
-        input SIG_ALUSrc,
+        
+        input [31:0] immediate, // Immediate value from the instruction to the ALUsrc mux
+        input [31:0] registerAData, // Data A from the register file
+        input [31:0] registerBData, // Data B from the register file
+        input [31:0] forwardWriteBackData, // Data from the write back stage to be forwarded to the ALU
+        input [4:0] SIG_Function, // Function signal from the control unit
+        input SIG_ALUSrc, // ALU source signal from the control unit
         input [1:0] SIG_ForwardA, // Forwarding signals set to 0 for now when we implement the whole pipeline we will change it
         input [1:0] SIG_ForwardB, 
 );
