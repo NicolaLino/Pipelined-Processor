@@ -3,10 +3,10 @@
 /*
     File Name: InstructionFetch.sv
     Description: istruction fetch stage of the pipeline processor 
-    Created by (Author Name):  Nicola Abu Shaibeh
+    Created by (Author Name):  Adam
     Creation Date:  09/06/2023
-    Contributors: 
-    Last Modified Date: 8/31/2023
+    Contributors:  Nicola Abu Shaibeh
+    Last Modified Date: 
     Version: 1.0
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
@@ -19,7 +19,7 @@
 
 module InstructoinFetch (
     output [31:0] instruction,
-    output [31:0] PC4,
+    output [31:0] PC4Out,
     input wire [31:0] callRs1Address,
     input wire [31:0] branchAddress,
     input wire [31:0] jumpAddress,
@@ -36,11 +36,12 @@ module InstructoinFetch (
 
     wire [31:0] instructionInMux;
     wire [31:0] retAddress;
-    wire [31:0] PC, PCin;
+    wire [31:0] PC, PCin, PC4;
     wire [2:0] PcSource;
     wire SIG_Kill;
     wire isEmpty, isFull;
     wire stackPush;
+    wire stackPop;
 
 
 
@@ -62,6 +63,8 @@ module InstructoinFetch (
         .operandA(PC),
         .operandB({29'b0,3'b100})
     );// PC <- PC + 4
+
+    assign PC4Out = PC4;
 
     Register32Bit PCReg(
         .data_out(PC),
@@ -96,6 +99,7 @@ module InstructoinFetch (
     );// instruction <- IM[PC]
 
     assign stackPush = (SIG_Call || SIG_CALL_RS1) ? 1'b1 : 1'b0;
+    assign stackPop = SIG_RET;
 
     StackPointer SP(
         .data_output(retAddress),// return address
@@ -103,7 +107,7 @@ module InstructoinFetch (
         .is_full(isFull),
         .data_input(PC4),
         .stack_push(stackPush),
-        .stack_pop(SIG_RET),
+        .stack_pop(stackPop),
         .clk(clk)
     );
 
