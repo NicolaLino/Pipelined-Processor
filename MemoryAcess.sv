@@ -6,7 +6,7 @@
     Created by (Author Name):  Nicola Abu Shaibeh
     Creation Date:  09/06/2023
     Contributors: 
-    Last Modified Date: 8/31/2023
+    Last Modified Date: 
     Version: 1.0
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
@@ -19,15 +19,15 @@
 
 
 module MemoryAccess(
-    output [31:0] ALUout,
-    output [31:0] readMemoryData,
-    input [31:0] ALUResult,
-    input [31:0] writeMemoryData,
-    input SIG_MEMRead,
-    input [1:0] SIG_MEMWrite,
-    input SIG_ExtHalf,
-    input SIG_ExtByte,
-    input [1:0] SIG_LoadType
+    output [31:0] ALUout, // ALU result
+    output [31:0] readMemoryData, // Data read from memory
+    input [31:0] ALUResult, // ALU result
+    input [31:0] writeMemoryData, // Data to be written to memory
+    input SIG_MEMRead, // Memory read signal
+    input [1:0] SIG_MEMWrite, // Memory write signal
+    input SIG_ExtHalf, // Half word extension signal
+    input SIG_ExtByte, // Byte extension signal
+    input [1:0] SIG_LoadType // Load type signal
 );
 
     wire [31:0] dataOut;

@@ -6,7 +6,7 @@
     Created by (Author Name):  Nicola Abu Shaibeh
     Creation Date:  09/06/2023
     Contributors: 
-    Last Modified Date: 8/31/2023
+    Last Modified Date: 
     Version: 1.0
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
@@ -17,15 +17,15 @@
 */
 
 module WriteBack(
-    output [31:0] writeBackData,
-    output [4:0] rdOut,
-    output SIG_RegWriteOut,
+    output [31:0] writeBackData, // Data to be written to the register file
+    output [4:0] rdOut, // Destination register
+    output SIG_RegWriteOut, // Register write signal
 
-    input [31:0] ALUout,
-    input [31:0] readMemoryData,
-    input SIG_WBdata,
-    input [4:0] rd,
-    input SIG_RegWrite
+    input [31:0] ALUout, // Data from the ALU
+    input [31:0] readMemoryData, // Data from the memory
+    input SIG_WBdata, // Selects the data to be written to the register file
+    input [4:0] rd, // Destination register
+    input SIG_RegWrite // Register write signal
 );
 
     Mux2to1 Mux2to1_0(

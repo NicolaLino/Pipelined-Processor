@@ -18,21 +18,21 @@
 
 
 module InstructoinFetch (
-    output [31:0] instruction,
-    output [31:0] PC4Out,
-    input wire [31:0] callRs1Address,
-    input wire [31:0] branchAddress,
-    input wire [31:0] jumpAddress,
-    input wire  SIG_Jump,
-    input wire  SIG_RET,
-    input wire  SIG_BNE,
-    input wire  SIG_BEQ,
-    input wire  SIG_CALL_RS1,
-    input wire  SIG_Call,
-    input wire  SIG_EQ,
-    input clk,
-    input reset
-    );
+    output [31:0] instruction, // instruction output to the decode stage
+    output [31:0] PC4Out, // input PC + 4 output to the decode stage for branch calculation and target address calculation
+    input wire [31:0] callRs1Address, // input address from the decode stage for call Rs1 instruction 
+    input wire [31:0] branchAddress, // input address from the decode stage for branch instruction
+    input wire [31:0] jumpAddress, // input address from the decode stage for jump instruction
+    input wire  SIG_Jump, // input signal from the decode stage for jump instruction
+    input wire  SIG_RET, // input signal from the decode stage for return instruction
+    input wire  SIG_BNE, // input signal from the decode stage for branch not equal instruction
+    input wire  SIG_BEQ, // input signal from the decode stage for branch equal instruction
+    input wire  SIG_CALL_RS1, // input signal from the decode stage for call Rs1 instruction
+    input wire  SIG_Call, // input signal from the decode stage for call instruction
+    input wire  SIG_EQ, // input signal from the decode stage if rs1 == rs2
+    input clk, // clock
+    input reset // reset
+);
 
     wire [31:0] instructionInMux;
     wire [31:0] retAddress;
@@ -42,7 +42,6 @@ module InstructoinFetch (
     wire isEmpty, isFull;
     wire stackPush;
     wire stackPop;
-
 
 
     Mux8to1 PcMux(

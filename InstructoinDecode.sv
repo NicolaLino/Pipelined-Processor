@@ -6,7 +6,7 @@
     Created by (Author Name):  Nicola Abu Shaibeh
     Creation Date:  09/06/2023
     Contributors: 
-    Last Modified Date: 8/31/2023
+    Last Modified Date: 
     Version: 1.0
     Copyright (c) Orion VLSI Technologies, 2023
     This unpublished material is proprietary to Orion VLSI Technologies.
@@ -18,40 +18,40 @@
 
 
 module InstructionDecode(
-    output [31:0] callRs1Address,
-    output [31:0] branchAddress,
-    output [31:0] jumpAddress,
-    output [31:0] immExtend,
-    output [31:0] busA,
-    output [31:0] busB,
-    output [4:0] rigsterD,
+    output [31:0] callRs1Address, //call rs1 address output to fetch stage
+    output [31:0] branchAddress, //branch address output to fetch stage
+    output [31:0] jumpAddress, //jump address output to fetch stage
+    output [31:0] immExtend, //extended immediate output to execute stage
+    output [31:0] busA, //busA output from register file to execute stage
+    output [31:0] busB, //busB output from register file to execute stage
+    output [4:0] rigsterD, // destination register 
     //signals in fetch stage
-    output SIG_EQ,
-    output SIG_BEQ,
-    output SIG_BNE,
-    output SIG_RET,
-    output SIG_Call,
-    output SIG_Jump,
-    output SIG_CALL_RS1,
+    output SIG_EQ, //  signal to compare rs1 with rs2 
+    output SIG_BEQ, // signal to branch if equal
+    output SIG_BNE, // signal to branch if not equal
+    output SIG_RET, // signal to return from call
+    output SIG_Call, // signal to call
+    output SIG_Jump, // signal to jump
+    output SIG_CALL_RS1, // signal to call rs1
     //signals in execute stage
-    output SIG_ALUSrc,
-    output [4:0] SIG_Function,
+    output SIG_ALUSrc, // signal to select busB or immExtend
+    output [4:0] SIG_Function, // signal to select ALU function
     //signals in memory stage
-    output SIG_ExtByte,
-    output SIG_ExtHalf,
-    output [1:0] SIG_MemWrite,
-    output [1:0] SIG_LoadType,
-    output SIG_MemRead,
+    output SIG_ExtByte, // signal to extend byte
+    output SIG_ExtHalf, // signal to extend half
+    output [1:0] SIG_MemWrite, // signal to write in memory
+    output [1:0] SIG_LoadType, // signal to load from memory
+    output SIG_MemRead, // signal to read from memory
     //signals in write back stage
-    output SIG_WBdata,
-    output SIG_RegWrite,
+    output SIG_WBdata, // signal to select data form alu or memory
+    output SIG_RegWrite, // signal to write in register file
     //inputs
-    input [31: 0] instruction,
-    input [31: 0] PC4,
+    input [31: 0] instruction, //instruction input from fetch stage
+    input [31: 0] PC4, //PC + 4 input from fetch stage
     //input form write back stage to write in register file
-    input [31:0] WB_BusW,
-    input [4:0] WB_RegW,
-    input WB_SIG_RegWrite,
+    input [31:0] WB_BusW, //data to write in register file
+    input [4:0] WB_RegW, //destination register to write in register file
+    input WB_SIG_RegWrite, //signal to write in register file
 );
     
     wire [4:0] rs1;
