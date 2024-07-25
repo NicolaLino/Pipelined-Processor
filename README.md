@@ -1,7 +1,7 @@
 # Pipelined-Processor
 this is a pipelined processor with 5 stages (IF,ID,EX,MEM,WB) and it's written in System Verilog
 
-![Datapath Block Design](image/Pipelined Processor V2-1.png)
+![Datapath Block Design](./image/Pipelined%20Processor%20V2-1.png)
 
 # Components needed to be implemented
 - [x] instruction memory
